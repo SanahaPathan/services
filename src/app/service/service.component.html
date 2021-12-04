@@ -1,0 +1,19 @@
+<div class="container">
+    <table class="table table-stripped">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Mail</th>
+            <th>Username</th>
+        </tr>
+        <tr *ngFor="let dt of data">
+            <td>{{dt.id}}</td>
+            <td>{{dt.name}}</td>
+            <td>{{dt.email}}</td>
+            <td>{{dt.username}}</td>
+        </tr>
+    </table>
+    <div *ngIf="errorFlag">
+        <h4>Something went wrong</h4>
+    </div>
+</div>

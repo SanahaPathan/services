@@ -1,0 +1,37 @@
+<p>directive works!</p>
+<h2>Structural directive</h2>
+<h4 *ngIf="showDataFlag"> This is used to show elements </h4>
+<h4 *ngIf="!admin"> This is used to show elements </h4>
+<select>
+    <option *ngFor="let nm of names">{{nm}}</option>
+</select>
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="'1'">one</div>
+    <div *ngSwitchCase="'2'">two</div>
+    <div *ngSwitchCase="'3'">three</div>
+    <div *ngSwitchCase="'4'">four</div>
+    <div *ngSwitchCase="'5'">five</div>
+    <div *ngSwitchDefault>This is default</div>
+
+</div>
+<div [ngClass]="myclass1">
+    <p>this is my webpage</p>
+    
+</div>
+<div [ngClass]="showDataFlag?'test1':'test2'">
+    <p>this is my webpage</p>SSS
+</div>
+<div [ngStyle]="mystyle">
+    <p>Hello angular</p>
+</div>SSSS
+<div [ngStyle]="{'color':'red','font-weight':'bold'}">
+    <p>Hello angular</p>
+</div>
+
+
+
+<div class="container" appCustdirective>
+    <h4>Custom Directives</h4>
+    <h4>This is to understand custom attribute directive</h4>
+    <p>This is example of custom attribute directive.</p>
+</div>

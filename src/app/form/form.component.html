@@ -1,0 +1,79 @@
+<h2>Template Driven Froms</h2>
+<div class="container">
+    <form name="myForm" #StudentRegForm="ngForm" (ngSubmit)="DataSubmit(StudentRegForm);StudentRegForm.reset()">
+        <div class="form-group">
+            <label>First Name <span style="color: red;">* </span></label>
+            <input type="text" class="form-control" name="fname" #fname="ngModel" ngModel>
+        </div>
+        <div class="form-group">
+            <label>Last Name<span style="color: red;">* </span></label>
+            <input type="text" class="form-control" name="lname" #lname="ngModel" ngModel>
+        </div>
+        <div class="form-group">
+            <label>Email<span style="color: red;">* </span></label>
+            <input type="email" class="form-control" name="email" #email="ngModel" ngModel>
+        </div>
+        <div class="form-group">
+            <label>Select Course</label>
+            <select class="form-control" name="course" #course="ngModel" ngModel>
+                <option *ngFor="let course of courses">{{course}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <input type="radio" name="gender" value='male' #gender="ngModel" ngModel>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value='female' #gender="ngModel" ngModel>
+            <label for="female">female</label>
+        </div>
+        <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" name="dateofbirth"  #dateofbirth="ngModel" ngModel>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="pass" #pass="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" name="cpass" #cpass="ngModel" ngModel>
+        </div> <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+<!--Table for data storage-->
+
+<div>
+    <P>DATA STORAGE</P>
+</div>
+<div class="container">
+    <div class="tableDesign">
+        <table class="table table-success table-striped">
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+                <th>email</th>
+                <th>course</th>
+                <th>gender</th>
+                <th>dateofbirth</th>
+                <th>Action</th>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                
+            </tr>
+            <tr *ngFor="let Data of TableData; index as i">
+                <th>{{Data.fname| uppercase}}</th>
+                <th>{{Data.lname}}</th>
+                <th>{{Data.email}}</th>
+                <th>{{Data.course}}</th>
+                <th>{{Data.gender}}</th>
+                <th>{{Data.dateofbirth}}</th>
+            </tr>
+        </table>
+    </div>
+</div>
